@@ -9,4 +9,5 @@ async function loadNews() {
 
   const { data, error } = await supabase.from('latest_news').select();
   console.log(data);
+  news.innerHTML = data
 }
