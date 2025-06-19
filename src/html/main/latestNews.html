@@ -21,6 +21,12 @@
  
   const supabase = createClient('https://wqoizupthpyffpoflwjn.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indxb2l6dXB0aHB5ZmZwb2Zsd2puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDMwNTUsImV4cCI6MjA2NTkxOTA1NX0.FdDPG9OtIXgb70ZgT2Vc1enkDgUnryxpb53QRfUg-iE');
 
+  function formatTimestamp(isoString) {
+      const date = new Date(isoString);
+      return date.toLocaleDateString();
+    }
+
+
   const { data, error } = await supabase.from('latest_news').select();
 
   console.log(data);
@@ -30,7 +36,7 @@
   const tbody = document.getElementById('table-body');
 
       tbody.innerHTML = data.map(row => `
-        <tr><td>${dayjs(row.created_date.format('YYYY-MM-DD HH:mm'))}</td></tr>
+        <tr><td>${formatTimestamp(row.created_date)}</td></tr>
         <tr><td>${row.news_title}</td></tr>
         <tr><td>${row.news_description}</td></tr>
         <tr><td></td></tr>`).join('');
