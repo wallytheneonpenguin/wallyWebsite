@@ -30,7 +30,7 @@
   const tbody = document.getElementById('table-body');
 
       tbody.innerHTML = data.map(row => `
-        <tr><td>${row.created_date.toLocaleDateString()}</td></tr>
+        <tr><td>${dayjs(row.created_date.format('YYYY-MM-DD HH:mm'))}</td></tr>
         <tr><td>${row.news_title}</td></tr>
         <tr><td>${row.news_description}</td></tr>
         <tr><td></td></tr>`).join('');
