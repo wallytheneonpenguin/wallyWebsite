@@ -8,9 +8,12 @@
 </head>
 <body>
 
-    <div id = "latestNews">
-
-    </div>
+    <table id="data-table">
+    <thead>
+    <tr id="table-head"></tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+    </table>
 
 <script type="module">
   import { createClient } from 'https://esm.sh/@supabase/supabase-js'
@@ -22,6 +25,15 @@
   const { data, error } = await supabase.from('latest_news').select();
   console.log(data);
   news.innerText = data;
+
+        const headers = Object.keys(data[0]);
+      const thead = document.getElementById('table-head');
+      thead.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
+
+  const tbody = document.getElementById('table-body');
+      tbody.innerHTML = data.map(row => `
+        <tr>${headers.map(h => `<td>${row[h]}</td>`).join('')}</tr>
+      `).join('');
 
 </script>
 </body>
