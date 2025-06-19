@@ -39,8 +39,8 @@
   const tbody = document.getElementById('table-body');
 
       tbody.innerHTML = data.map(row => `
-        <tr><td>${formatTimestamp(row.created_date)}</td></tr>
-        <tr><td>${row.news_title}</td></tr>
+        <tr><td><i>${formatTimestamp(row.created_date)}</i></td></tr>
+        <tr><td><b>${row.news_title}</b></td></tr>
         <tr><td>${row.news_description}</td></tr>
         <tr><td></td></tr>`).join('');
 
