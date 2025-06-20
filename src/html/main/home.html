@@ -4,39 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Wally's Lair</title>
-  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/default.css">
   <style>
     body {
       background-size: 55%;
       background-repeat: no-repeat;
       background-position: center;
       transition: background-image 1s ease-in-out;
-      color:white;
     }    
   </style>
 </head>
 <body>
-<script>
-  const images = [
-    '../../../media/images/backgrounds/WallyBG1.png',
-    '../../../media/images/backgrounds/WallyBG2.png',
-    '../../../media/images/backgrounds/WallyBG3.png',
-    '../../../media/images/backgrounds/WallyBG4.png',
-    '../../../media/images/backgrounds/WallyBG5.png'
-  ];
+  <div style="height:500px"></div>
 
-  let current = 0;
-
-  function changeBackground() {
-    document.body.style.backgroundImage = `url('${images[current]}')`;
-    current = (current + 1) % images.length;
-  }
-
-  // Initial background
-  changeBackground();
-
-  // Change every 5 seconds
-  setInterval(changeBackground, 5000);
+<script src="../../javascript/homebg.js">
 </script>
 </body>
 
