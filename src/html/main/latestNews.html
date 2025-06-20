@@ -9,6 +9,9 @@
 <body>
 
   <h2>Latest News</h2>
+
+<br/><br/><br/>
+
     <div style="width: 80%;margin: 0 auto;">
     <table id="data-table">
     <thead>
@@ -39,10 +42,27 @@
   const tbody = document.getElementById('table-body');
 
       tbody.innerHTML = data.map(row => `
-        <tr><td><i>${formatTimestamp(row.created_date)}</i></td></tr>
-        <tr><td><b>${row.news_title}</b></td></tr>
-        <tr><td>${row.news_description}</td></tr>
-        <tr><td></td></tr>`).join('');
+        <tr><td><div class="styledate">${formatTimestamp(row.created_date)}</div></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td><div class="styletitle">${row.news_title}</div></td></tr>
+        <tr><td></td></tr>
+        <hr style="border: none; height: 1px; background-color: white;">
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td><div class="styledscription">${row.news_description}</div></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        `).join('');
 
 </script>
 </body>
