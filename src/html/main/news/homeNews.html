@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Wally's Lair</title>
   <link rel="stylesheet" href="../../../css/default.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+  <main>
 
-  <h2>Latest News</h2>
+  <h1>Latest News</h1>
 
 <br/><br/><br/>
 
@@ -20,42 +22,11 @@
     <tbody id="table-body"></tbody>
     </table>
     </div>
+  </main>
 
-<script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js'
-  import dayjs from 'https://esm.sh/dayjs';
- 
-  const supabase = createClient('https://wqoizupthpyffpoflwjn.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indxb2l6dXB0aHB5ZmZwb2Zsd2puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDMwNTUsImV4cCI6MjA2NTkxOTA1NX0.FdDPG9OtIXgb70ZgT2Vc1enkDgUnryxpb53QRfUg-iE');
+  <script type="module" src="../../../javascript/retreiveallnews.js">
+  </script>
 
-  function formatTimestamp(isoString) {
-      const date = new Date(isoString);
-      return date.toLocaleDateString();
-    }
-
-
-  const { data, error } = await supabase.from('latest_news').select();
-
-  console.log(data);
-
-      const headers = Object.keys(data[0]);
-
-  const tbody = document.getElementById('table-body');
-
-      tbody.innerHTML = data.map(row => `
-        <tr><td><div class="styledate">${formatTimestamp(row.created_date)}</div></td></tr>
-        <tr><td></td></tr>
-        <tr><td></td></tr>
-        <tr><td></td></tr>
-        <tr><td><div class="styletitle">${row.news_title}</div></td></tr>
-        <tr><td></td></tr>
-        <hr style="border: none; height: 1px; background-color: white;">
-        <tr><td></td></tr>
-        <tr><td></td></tr>
-        <tr><td><div class="styledscription">${row.news_description}</div></td></tr>
-        <tr><td></td></tr>
-        `).join('');
-
-</script>
 </body>
 
 </html>

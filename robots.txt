@@ -1,0 +1,3 @@
+User-agent: * 
+Allow: / 
+Sitemap: https://wallytheneonpenguin.github.io/wallyWebsite/sitemap.xml 
