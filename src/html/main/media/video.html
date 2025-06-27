@@ -4,20 +4,29 @@
   <meta charset="UTF-8">
   <title>Video</title>
   <link rel="stylesheet" href="../../../css/default.css">
+  <link rel="stylesheet" href="../../../css/secondMenu.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+
+   <nav class="menu">
+    <ul>
+      <li><a href="#" onclick="event.preventDefault();switchVideo('l7_3wn6KyYQ?si=FkHHAIAJnmBiC95v')" target="music-video-frame">r Slash</a></li>
+      <li><a href="#" onclick="event.preventDefault();switchVideo('Ls3iSfykiI4?si=8uTHD_upEkQ6PZz3')" target="music-video-frame">Self Respect</a></li>
+    </ul>
+  </nav>
   <main>
-<h2> Self Respect (Debut Track)</h2> 
+<h2>Listen to the latest (or earliest) by Wally The Neon Penguin!</h2> 
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
-  <iframe width="600px" height="400px" src="https://www.youtube.com/embed/Ls3iSfykiI4?si=8uTHD_upEkQ6PZz3" 
+  <iframe id="music-video-frame" width="600px" height="400px" src="https://www.youtube.com/embed/l7_3wn6KyYQ?si=FkHHAIAJnmBiC95v" 
 title="YouTube video player" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </div>
+<script src="../../../javascript/media.js"></script>
   </main>
 </body>
 </html>

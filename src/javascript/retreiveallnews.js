@@ -10,7 +10,7 @@
     }
 
 
-  const { data, error } = await supabase.from('latest_news').select();
+  const { data, error } = await supabase.from('latest_news').select('*').order('created_date', { ascending: false });;
 
   console.log(data);
 
@@ -29,5 +29,5 @@
         <tr><td></td></tr>
         <tr><td></td></tr>
         <tr><td><div class="styledscription">${row.news_description}</div></td></tr>
-        <tr><td></td></tr>
+        <tr style="height:50px;"><td></td></tr>
         `).join('');
